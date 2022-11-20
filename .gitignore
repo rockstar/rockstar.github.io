@@ -1,3 +1,6 @@
+__pycache__/
+output/
+
 _site
 .sass-cache
 .jekyll-cache
