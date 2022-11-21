@@ -1,5 +1,6 @@
 Title: Don't Put Code There
 Date: 2020-03-20 10:00:00 -0600
+Status: draft
 > "...created a new python package, and then, you know, created the dunder init file..."
 > "Yeah, don't put code there" -JP Calderone, in conversation with me at PyCon 2009
 

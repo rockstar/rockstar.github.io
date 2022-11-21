@@ -1,3 +1,5 @@
+import os
+
 AUTHOR = 'Paul Hummer'
 SITENAME = 'Help computer'
 SITEURL = ''
@@ -7,6 +9,13 @@ PATH = 'content'
 TIMEZONE = 'America/Denver'
 
 DEFAULT_LANG = 'en'
+
+THEME = os.path.join(os.path.dirname(__file__), 'theme')
+DISABLE_SEARCH = True
+TAG_SAVE_AS = ''
+AUTHOR_SAVE_AS = ''
+DIRECT_TEMPLATES = ('index', 'categories', 'archives', 'search', 'tipue_search')
+TIPUE_SEARCH_SAVE_AS = 'tipue_search.json'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -22,10 +31,14 @@ LINKS = (('Pelican', 'https://getpelican.com/'),
          ('You can modify those links in your config file', '#'),)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (
+    ('twitter', 'https://twitter.com/rockstar_'),
+    ('github', 'https://github.com/rockstar'),
+    ('facebook', 'https://facebook.com/paulhummer'),
+    ('fa-brands fa-mastodon', 'https://mastodon.social/@iamtherockstar'),
+    )
 
-DEFAULT_PAGINATION = 10
+DEFAULT_PAGINATION = 3
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True

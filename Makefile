@@ -75,5 +75,13 @@ github: publish
 	ghp-import -m "Generate Pelican site" -b $(GITHUB_PAGES_BRANCH) "$(OUTPUTDIR)"
 	git push origin $(GITHUB_PAGES_BRANCH)
 
+SCSSDIR ?= theme/scss
+CSSDIR = theme/static/css
 
-.PHONY: html help clean regenerate serve serve-global devserver publish github
+sass:
+	@for i in $$(ls $(SCSSDIR)); do \
+	    out="$(CSSDIR)/$${i%.*}.css"; \
+	    sass "$(SCSSDIR)/$$i" "$$out"; \
+	 done
+
+.PHONY: sass html help clean regenerate serve serve-global devserver publish github
