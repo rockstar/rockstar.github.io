@@ -6,6 +6,6 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - run: touch requirements.txt
+      - run: echo "pelican==4.8.0" > requirements.txt
       - name: GitHub Pages Pelican Build Action
         uses: nelsonjchen/gh-pages-pelican-action@0.1.10
