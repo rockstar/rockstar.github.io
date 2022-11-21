@@ -1,7 +1,5 @@
 name: Publish blog
 on: [push]
-env:
-  GH_PAGES_BRANCH: master
 jobs:
   publish:
     runs-on: ubuntu-latest
