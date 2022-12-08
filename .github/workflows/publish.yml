@@ -1,9 +1,18 @@
 name: Publish blog
 on: [push]
+env:
+  GH_PAGES_BRANCH: master
 jobs:
-  publish:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "pelican==4.8.0" > requirements.txt
-      - name: GitHub Pages Pelican Build Action
-        uses: nelsonjchen/gh-pages-pelican-action@0.1.10
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+      - run: pip install -r requirements.txt
+      - run: invoke artifact
+      - name: Upload artifact
+        uses: actions/upload-artifact@main
+        with:
+          name: github-pages
+          path: ${{ runner.temp }}/artifact.tar
+          retention-days: 1

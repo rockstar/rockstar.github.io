@@ -39,6 +39,8 @@ def clean(c):
     if os.path.isdir(CONFIG['deploy_path']):
         shutil.rmtree(CONFIG['deploy_path'])
         os.makedirs(CONFIG['deploy_path'])
+    if os.path.exists('artifact.tar'):
+        os.remove('artifact.tar')
 
 @task
 def build(c):
@@ -123,7 +125,6 @@ def livereload(c):
 
     server.serve(host=CONFIG['host'], port=CONFIG['port'], root=CONFIG['deploy_path'])
 
-
 @task
 def publish(c):
     """Publish to production via rsync"""
@@ -134,6 +135,16 @@ def publish(c):
         '{} {ssh_user}@{ssh_host}:{ssh_path}'.format(
             CONFIG['deploy_path'].rstrip('/') + '/',
             **CONFIG))
+
+@task
+def artifact(c):
+    """Build and upload a github actions artifact."""
+    pelican_run('-s {settings_publish}'.format(**CONFIG))
+    c.run(
+        'cd output && '
+        'tar --dereference -cvf "../artifact.tar" --exclude=.git --exclude=.github . && '
+        'cd ..'
+        )
 
 @task
 def gh_pages(c):
