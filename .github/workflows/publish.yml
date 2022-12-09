@@ -14,7 +14,7 @@ jobs:
         uses: actions/upload-artifact@main
         with:
           name: github-pages
-          path: ${{ runner.temp }}/artifact.tar
+          path: artifact.tar
           retention-days: 1
       - name: Deploy to pages
         id: deployment
