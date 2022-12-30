@@ -1,6 +1,6 @@
 Title: Move Fast and Brake Things
-Date: 2022-12-22 10:00:00 -0600
-Status: draft
+Date: 2022-12-30 3:30:00 -0600
+Status: published
 > Unless you are breaking stuff, you are not moving fast enough. -Mark Zuckerberg
 
 In 2009, when [we first heard "Move fast and break things,"](https://www.businessinsider.com/mark-zuckerberg-innovation-2009-10) I can understand how that sounded innovative. At the time, AWS was only a few years old, many of the technologies that we would consider "modern" didn't even exist. Most companies were still experimenting with Agile Software Development™. Netflix was still sending DVDs in the mail! "Move fast and break things" sounded innovative and bold. Even established enterprise organizations were embracing the idea.
@@ -13,7 +13,7 @@ I'm not suggesting we go back to waterfall development, or we start to consider 
 
 ![Kenny Coolbeth uses his rear brakes so much his rotor glows red]({attach}/images/coolbeth-move-fast.png)
 
-That sounds counter-intuitive, I know. Slow down to go fast? Yes. Racing is about following an ideal line, about going through corners and down straightaways on a precise path. Using the brakes engages the suspension, changes the weight distribution, pushes the tires into the ground, and (ideally) keeps one headed in the right direction. Analysts and talking heads will use phrases like "blow the corner," "left the door open," and "miss the apex" to talk about how a racer might fall off line. Falling off the line may end up being detrimental to going fast and "losing a second" could cost you the race. The racing line is so important that racers who are a lap down when faster traffic is coming through are usually instructed to move "off line" so that those faster pilots can continue on unimpeded[^1]. 
+That sounds counter-intuitive, I know. Slow down to go fast? Yes. Racing is about following an ideal line, about going through corners and down straightaways on a precise path. Using the brakes engages the suspension, changes the weight distribution, pushes the tires into the ground, and (ideally) keeps one headed in the right direction. Analysts and talking heads will use phrases like "blow the corner," "left the door open," and "miss the apex" to talk about how a racer might fall "off line". Falling off the line may end up being detrimental to going fast and "losing a second" could cost you the race. The racing line is so important that racers who are a lap down when faster traffic is coming through are usually instructed to move "off line" so that those faster pilots can continue on unimpeded[^1].
 
 In software development process, we want to go fast. We want to quickly deliver fixes for defects. We want to ship features quickly. We want to delight our users, but we also want to _feel_ successful. That success often comes in the form of delivering quality at a good pace[^2]. The only way to keep pace, to stay "on line," to be headed in the right direction, is to value the tools we have that keep us headed in the right direction.
 
