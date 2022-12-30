@@ -45,57 +45,19 @@ def clean(c):
 @task
 def build(c):
     """Build local version of site"""
-    pelican_run('-s {settings_base}'.format(**CONFIG))
-
-@task
-def rebuild(c):
-    """`build` with the delete switch"""
     pelican_run('-d -s {settings_base}'.format(**CONFIG))
+    c.run('sass theme/scss/main.scss theme/static/css/main.css')
 
-@task
-def regenerate(c):
-    """Automatically regenerate site upon file modification"""
-    pelican_run('-r -s {settings_base}'.format(**CONFIG))
 
 @task
 def serve(c):
-    """Serve site at http://$HOST:$PORT/ (default is localhost:8000)"""
-
-    class AddressReuseTCPServer(RootedHTTPServer):
-        allow_reuse_address = True
-
-    server = AddressReuseTCPServer(
-        CONFIG['deploy_path'],
-        (CONFIG['host'], CONFIG['port']),
-        ComplexHTTPRequestHandler)
-
-    if OPEN_BROWSER_ON_SERVE:
-        # Open site in default browser
-        import webbrowser
-        webbrowser.open("http://{host}:{port}".format(**CONFIG))
-
-    sys.stderr.write('Serving at {host}:{port} ...\n'.format(**CONFIG))
-    server.serve_forever()
-
-@task
-def reserve(c):
-    """`build`, then `serve`"""
-    build(c)
-    serve(c)
-
-@task
-def preview(c):
-    """Build production version of site"""
-    pelican_run('-s {settings_publish}'.format(**CONFIG))
-
-@task
-def livereload(c):
     """Automatically reload browser tab upon file modification."""
     from livereload import Server
 
     def cached_build():
-        cmd = '-s {settings_base} -e CACHE_CONTENT=true LOAD_CONTENT_CACHE=true'
-        pelican_run(cmd.format(**CONFIG))
+        #cmd = '-s {settings_base} -e CACHE_CONTENT=true LOAD_CONTENT_CACHE=true'
+        #pelican_run(cmd.format(**CONFIG))
+        build(c)
 
     cached_build()
     server = Server()
@@ -103,17 +65,16 @@ def livereload(c):
     watched_globs = [
         CONFIG['settings_base'],
         '{}/templates/**/*.html'.format(theme_path),
+        '{}/scss/*.scss'.format(theme_path),
+        # We explicitly don't want the *.css files here, as they should not
+        # be edited directly.
+        "{}/static/**/*.js".format(theme_path),
     ]
 
     content_file_extensions = ['.md', '.rst']
     for extension in content_file_extensions:
         content_glob = '{0}/**/*{1}'.format(SETTINGS['PATH'], extension)
         watched_globs.append(content_glob)
-
-    static_file_extensions = ['.css', '.js']
-    for extension in static_file_extensions:
-        static_file_glob = '{0}/static/**/*{1}'.format(theme_path, extension)
-        watched_globs.append(static_file_glob)
 
     for glob in watched_globs:
         server.watch(glob, cached_build)
@@ -125,34 +86,20 @@ def livereload(c):
 
     server.serve(host=CONFIG['host'], port=CONFIG['port'], root=CONFIG['deploy_path'])
 
-@task
-def publish(c):
-    """Publish to production via rsync"""
-    pelican_run('-s {settings_publish}'.format(**CONFIG))
-    c.run(
-        'rsync --delete --exclude ".DS_Store" -pthrvz -c '
-        '-e "ssh -p {ssh_port}" '
-        '{} {ssh_user}@{ssh_host}:{ssh_path}'.format(
-            CONFIG['deploy_path'].rstrip('/') + '/',
-            **CONFIG))
 
 @task
 def artifact(c):
-    """Build and upload a github actions artifact."""
+    """Build and upload a github actions artifact.
+    
+    This task should only be used in the Github Actions to build a tarball
+    that will serve as the content for the github pages site.
+    """
     pelican_run('-s {settings_publish}'.format(**CONFIG))
     c.run(
         'cd output && '
         'tar --dereference -cvf "../artifact.tar" --exclude=.git --exclude=.github . && '
         'cd ..'
         )
-
-@task
-def gh_pages(c):
-    """Publish to GitHub Pages"""
-    preview(c)
-    c.run('ghp-import -b {github_pages_branch} '
-          '-m {commit_message} '
-          '{deploy_path} -p'.format(**CONFIG))
 
 def pelican_run(cmd):
     cmd += ' ' + program.core.remainder  # allows to pass-through args to pelican

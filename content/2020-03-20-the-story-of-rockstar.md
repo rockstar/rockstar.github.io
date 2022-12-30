@@ -1,5 +1,6 @@
 Title: The story of rockstar
-Date: 2020-03-20 10:00:00 -0600
+Date: 2020-03-30 14:00:00 -0600
+Status: published
 > I have to think of something really cool. -Paul, 1998
 
 I stared at my new Red Hat 5.1 installation. After more than two hours learning about partition mounts and boot loaders, I had successfully installed linux on a computer I had pulled from a dumpster. It was time to pick a username. I looked around my room, and saw my Fender Stratocaster (made in Mexico) sitting against my practice amp in the corner of the room. I typed in `rockstar` and never looked back.
