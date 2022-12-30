@@ -7,7 +7,7 @@ In 2009, when [we first heard "Move fast and break things,"](https://www.busines
 
 ![Felix  Sargent tweets "'Move fast and break shit' is why we have so much broken shit]({attach}/images/felix-sargent-move-fast.png)
 
-Of course, in all-to-familiar fashion, we seemed to spend a lot of time taking the wrong lessons from that. [We sent it too hard](https://www.youtube.com/watch?v=_PVOuZ21-Dg), almost recklessly, and the products we produced felt improvised and careless. If one _didn't_ break something, it was a fluke, because broken things were the default. Our tools were broken, our 
+Of course, in all-to-familiar fashion, we seemed to spend a lot of time taking the wrong lessons from that. [We sent it too hard](https://www.youtube.com/watch?v=_PVOuZ21-Dg), almost recklessly, and the products we produced felt improvised and careless. If one _didn't_ break something, it was a fluke, because broken things were the default. Our tools were broken, our products were unstable, and we learned the constant drum beat of the firefighting was a terrible way to live.
 
 I'm not suggesting we go back to waterfall development, or we start to consider VC-flavored hot takes as anything more than off-the-cuff, thoughtless platitudes that reek of privilege. I do think that if we want to talk about going fast, we should consider what makes fast people fast: brakes. There's a joke in motorsports racing where people might say "I'm all gas, no brakes." There are definitely folks who say that seriously, and those people are the ones most likely to get quite hurt. Anyone who aspires to be the fastest, i.e. to win the race, knows that _the fastest people use their brakes the most_.
 
