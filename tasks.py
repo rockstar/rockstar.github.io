@@ -3,8 +3,6 @@
 import os
 import shlex
 import shutil
-import sys
-import datetime
 
 from invoke import task
 from invoke.main import program
@@ -51,12 +49,9 @@ def serve(c):
     """Automatically reload browser tab upon file modification."""
     from livereload import Server
 
-    def cached_build():
-        #cmd = '-s {settings_base} -e CACHE_CONTENT=true LOAD_CONTENT_CACHE=true'
-        #pelican_run(cmd.format(**CONFIG))
-        build(c)
+    do_build = lambda: build(c)
 
-    cached_build()
+    do_build()
     server = Server()
     theme_path = SETTINGS['THEME']
     watched_globs = [
@@ -74,7 +69,7 @@ def serve(c):
         watched_globs.append(content_glob)
 
     for glob in watched_globs:
-        server.watch(glob, cached_build)
+        server.watch(glob, do_build)
 
     if OPEN_BROWSER_ON_SERVE:
         # Open site in default browser
