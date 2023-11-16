@@ -2,7 +2,7 @@ import os
 
 AUTHOR = 'Paul Hummer'
 SITENAME = 'Help computer'
-SITEURL = ''
+SITEURL = 'https://rockstar.github.io'
 
 PATH = 'content'
 
@@ -32,7 +32,7 @@ LINKS = (('Pelican', 'https://getpelican.com/'),
 
 # Social widget
 SOCIAL = (
-    ('twitter', 'https://twitter.com/rockstar_'),
+    #('twitter', 'https://twitter.com/rockstar_'),
     ('github', 'https://github.com/rockstar'),
     ('facebook', 'https://facebook.com/paulhummer'),
     ('fa-brands fa-mastodon', 'https://mastodon.social/@iamtherockstar'),
@@ -42,9 +42,6 @@ DEFAULT_PAGINATION = 3
 DEFAULT_METADATA = {
     'status': 'hidden',
 }
-
-# Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
 
 PLUGINS = [
     'pelican.plugins.figures'
