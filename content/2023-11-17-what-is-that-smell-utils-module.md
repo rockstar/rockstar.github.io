@@ -2,7 +2,7 @@ Title: What’s that smell? The utils module
 Date: 2023-10-16 12:00:00 -0600
 Status: draft
 
-![The junk drawer, where you put things you want to hold onto but don’t have a place for]({attach}/images/IMG/0061.jpeg)
+![The junk drawer, where you put things you want to hold onto but don’t have a place for]({attach}/images/IMG_0061.jpeg)
 
 You’ve started a new project and you’re feeling excited. The code is well-factored, it does the minimum viable thing. You’ve shipped 0.1. Maybe you’ve even released a few different features to production.
 
