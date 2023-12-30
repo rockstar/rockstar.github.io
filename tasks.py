@@ -6,9 +6,7 @@ import shutil
 
 from invoke import task
 from invoke.main import program
-from invoke.util import cd
 from pelican import main as pelican_main
-from pelican.server import ComplexHTTPRequestHandler, RootedHTTPServer
 from pelican.settings import DEFAULT_CONFIG, get_settings_from_file
 
 OPEN_BROWSER_ON_SERVE = True
@@ -28,6 +26,7 @@ CONFIG = {
     'port': 8000,
 }
 
+
 @task
 def clean(c):
     """Remove generated files"""
@@ -36,10 +35,14 @@ def clean(c):
         os.makedirs(CONFIG['deploy_path'])
     if os.path.exists('artifact.tar'):
         os.remove('artifact.tar')
+    with open('theme/templates/goodreads.html', 'w') as f:
+        f.write('')
+
 
 @task
 def build(c):
     """Build local version of site"""
+    generate_goodreads(c)
     pelican_run('-d -s {settings_base}'.format(**CONFIG))
     c.run('sass theme/scss/main.scss theme/static/css/main.css')
 
@@ -49,7 +52,7 @@ def serve(c):
     """Automatically reload browser tab upon file modification."""
     from livereload import Server
 
-    do_build = lambda: build(c)
+    do_build = lambda: build(c)  # noqa
 
     do_build()
     server = Server()
@@ -82,7 +85,7 @@ def serve(c):
 @task
 def artifact(c):
     """Build and upload a github actions artifact.
-    
+
     This task should only be used in the Github Actions to build a tarball
     that will serve as the content for the github pages site.
     """
@@ -91,8 +94,21 @@ def artifact(c):
         'cd output && '
         'tar --dereference -cvf "../artifact.tar" --exclude=.git --exclude=.github . && '
         'cd ..'
-        )
+    )
+
 
 def pelican_run(cmd):
     cmd += ' ' + program.core.remainder  # allows to pass-through args to pelican
     pelican_main(shlex.split(cmd))
+
+
+@task
+def generate_goodreads(cmd):
+    """Generate the goodreads 'Currently reading' section template."""
+    import feedparser
+
+    url = SETTINGS['GOODREADS_CURRENTLY_READING_FEED']
+    data = feedparser.parse(url)
+    with open('theme/templates/goodreads.html', 'w') as f:
+        for entry in data.entries:
+            f.writelines(['<div class="currently-reading"><a href="https://www.goodreads.com/book/show/%s"><img src="%s" alt="%s" /><div>%s</div></a></div>' % (entry['book_id'], entry['book_image_url'], entry['book_description'], entry['title'])])
