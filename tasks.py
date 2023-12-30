@@ -89,6 +89,7 @@ def artifact(c):
     This task should only be used in the Github Actions to build a tarball
     that will serve as the content for the github pages site.
     """
+    generate_goodreads(c)
     pelican_run('-s {settings_publish}'.format(**CONFIG))
     c.run(
         'cd output && '
