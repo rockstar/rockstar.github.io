@@ -43,9 +43,7 @@ DEFAULT_METADATA = {
     'status': 'hidden',
 }
 
-PLUGINS = [
-    'pelican.plugins.figures'
-    ]
+PLUGINS = ['pelican.plugins.figures']
 
 GOODREADS_ACTIVITY_FEED = "https://www.goodreads.com/user/updates_rss/3283314"
 GOODREADS_CURRENTLY_READING_FEED = "https://www.goodreads.com/review/list_rss/3283314?key=ciITNG4_sutJ2W5c3IRsR9Da63bhHGvRbwhkTEjAhZa8fW76&shelf=currently-reading"
