@@ -96,6 +96,11 @@
             {% endif %}
 
             <div class="uk-panel uk-panel-box">
+                <h3 class="uk-panel-title">Currently reading</h3>
+                {% include "goodreads.html" %}
+            </div>
+
+            <div class="uk-panel uk-panel-box">
                 <ul class="uk-nav uk-nav-side">
                     <li class="uk-nav-header">Categories</li>
                     {% for cat, _ in categories %}
