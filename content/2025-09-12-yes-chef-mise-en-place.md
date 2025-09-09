@@ -1,6 +1,10 @@
 Title: Yes Chef! — Everything in its place
 Date: 2025-09-12 12:00:00 -0600
+Slug: 
 Status: draft
+
+![A kitchen organized and ready for service[^1]]({attach}/images/mise-en-place-1.jpg)
+
 
 Before the first ticket prints, a good cook in a professional culinary kitchen knows exactly where everything is. This isn’t by accident. To describe the order and organization of their kitchen, the French use the phrase _mise en place_, meaning “to put in place” or, more colloquially accepted, “everything in its place.” _Mise en place_ isn’t about neatness–it’s about survival.
 
@@ -14,8 +18,13 @@ Consider the following example, which may be painfully familiar: Krista, a new e
 
 The team James is on becomes the new owner of the image catalog service, and James is assigned to work with Krista on the bug. “Where are the docs for this interface,” he asks. “They’re on the wiki.” James types “image catalog service” into the wiki search box and gets 45 results, six of which claim to be api design doc, but all describe a slightly different interface, none of which appear to be correct.
 
-Days (or weeks) later, the cause of the defect ends up being an unused attribute from the serialized data sent to the service, and the fix is a single line change. When James asks for time to update the documentation for the issue, he’s told there isn’t time, and he’ll just have to “make do.” Four months later, James accepts a role at a competing company, and that domain knowledge is lost to the org. This pattern will repeat itself when an issue comes up again[1].
+Days (or weeks) later, the cause of the defect ends up being an unused attribute from the serialized data sent to the service, and the fix is a single line change. When James asks for time to update the documentation for the issue, he’s told there isn’t time, and he’ll just have to “make do.” Four months later, James accepts a role at a competing company, and that domain knowledge is lost to the org. This pattern will repeat itself when an issue comes up again[^2].
 
 Often times, managers, whether people, project, or product management, shrug off requests to get organized almost as a developer trope, as if these “Keep the Lights On” tasks are optional nice-to-haves. The familiar refrain is something like “the perfect is the enemy of the good,” as though a platitude could be successfully used as a cudgel. But when you organize, you’re not just helping yourself — you’re making sure your teammates don’t waste time hunting for tools, docs, or ownership. Order is a form of respect.
 
 In a kitchen, every hour spent sharpening the knives and setting the station pays back in smoother service. In software, the same is true: organization isn’t overhead. It’s how you protect flow.
+
+——
+
+[^1] <a href=“https://www.vecteezy.com/free-photos/commercial-kitchen”>Source</a>
+[^2] I have come to call this phenomenon “Just Enough Development.” It’s the equivalent of a finger in the dam: it’s easy to think “oh, we’ve plugged the hole, so we should be good for a bit.” The issue here is that the plug was someone’s proverbial finger, someone’s mental cycles, etc. Now you have to keep that specific person around, and hope (a) they are a particular brand of neurodiverse, and (b) aren’t the type to hoard that information in the name of “job security,” because those types aren’t healthy in your org.
