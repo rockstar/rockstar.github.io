@@ -14,6 +14,8 @@ In software development practices, we often lack that _mise en place_, and we sh
 
 What we often miss in our haste to consistently deliver value in software engineering is this: chaos compounds. In a kitchen, cooks may have to stop to dice more onions because the prep team didn’t prep enough; in software, bugs pile up while someone digs through tribal knowledge. Disorder multiplies faster than the workload, and eventually that disorder becomes all there is.
 
+> If you let your mise en place run down, get dirty and disorganized, you’ll quickly find yourself spinning in place and calling for back up. That’s what the inside of your head looks like now. Work clean! —Anthony Bourdain, Kitchen Confidental
+
 Consider the following example, which may be painfully familiar: Krista, a new engineer is tasked with fixing a bug in the production build pipeline. They track down the bug to an image catalog service, open slack and says “What team own the image catalog service?” “Oh, that was owned by Steven’s team, but when he left, that team got dissolved and the members were split up to other teams.” Krista’s task has just become immensely more complex. Now we have to get managers and organizations involved, we have to find resources to bring an orphaned service 
 
 The team James is on becomes the new owner of the image catalog service, and James is assigned to work with Krista on the bug. “Where are the docs for this interface,” he asks. “They’re on the wiki.” James types “image catalog service” into the wiki search box and gets 45 results, six of which claim to be api design doc, but all describe a slightly different interface, none of which appear to be correct.
