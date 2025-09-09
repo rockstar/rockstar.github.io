@@ -28,5 +28,5 @@ In a kitchen, every hour spent sharpening the knives and setting the station pay
 
 ——
 
-[^1] <a href=“https://www.vecteezy.com/free-photos/commercial-kitchen”>Source</a>
-[^2] I have come to call this phenomenon “Just Enough Development.” It’s the equivalent of a finger in the dam: it’s easy to think “oh, we’ve plugged the hole, so we should be good for a bit.” The issue here is that the plug was someone’s proverbial finger, someone’s mental cycles, etc. Now you have to keep that specific person around, and hope (a) they are a particular brand of neurodiverse, and (b) aren’t the type to hoard that information in the name of “job security,” because those types aren’t healthy in your org.
+[^1]: <a href=“https://www.vecteezy.com/free-photos/commercial-kitchen”>Source</a>
+[^2]: I have come to call this phenomenon “Just Enough Development.” It’s the equivalent of a finger in the dam: it’s easy to think “oh, we’ve plugged the hole, so we should be good for a bit.” The issue here is that the plug was someone’s proverbial finger, someone’s mental cycles, etc. Now you have to keep that specific person around, and hope (a) they are a particular brand of neurodiverse, and (b) aren’t the type to hoard that information in the name of “job security,” because those types aren’t healthy in your org.
