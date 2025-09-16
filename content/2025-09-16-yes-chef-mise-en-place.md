@@ -1,7 +1,7 @@
 Title: Yes Chef! — Everything in its place
-Date: 2025-09-12 12:00:00 -0600
+Date: 2025-09-16 13:00:00 -0600
 Slug: 
-Status: draft
+Status: published
 
 ![A kitchen organized and ready for service[^1]]({attach}/images/mise-en-place-1.jpg)
 
