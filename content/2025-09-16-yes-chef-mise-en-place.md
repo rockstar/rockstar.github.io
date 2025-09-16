@@ -1,4 +1,4 @@
-Title: Yes Chef! — Everything in its place
+Title: Yes Chef! Everything in its place
 Date: 2025-09-16 13:00:00 -0600
 Slug: 
 Status: published
